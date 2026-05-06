@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kontak</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/produk">Produk</a>
+    <a href="/kontak">Kontak</a>
+</nav>
+
+<h2>Kontak Kami</h2>
+
+<form method="POST">
+    <input type="text" name="nama" placeholder="Nama" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <button type="submit">Kirim</button>
+</form>
+
+</body>
+</html>
