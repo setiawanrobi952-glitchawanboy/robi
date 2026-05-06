@@ -1,0 +1,142 @@
+[10.27, 6/5/2026] Lutt: from flask import Flask, render_template, request
+import os
+
+app = Flask(_name_)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/produk')
+def produk():
+    return render_template('produk.html')
+
+@app.route('/kontak', methods=['GET', 'POST'])
+def kontak():
+    if request.method == 'POST':
+        nama = request.form['nama']
+        email = request.form['email']
+        return render_template('hasil.html', nama=nama, email=email)
+    return render_template('kontak.html')
+
+if _name_ == '_main_':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+[10.27, 6/5/2026] Lutt: from flask import Flask, render_template, request
+import os
+
+app = Flask(_name_)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/produk')
+def produk():
+    return render_template('produk.html')
+
+@app.route('/kontak', methods=['GET', 'POST'])
+def kontak():
+    if request.method == 'POST':
+        nama = request.form['nama']
+        email = request.form['email']
+        return render_template('hasil.html', nama=nama, email=email)
+    return render_template('kontak.html')
+
+if _name_ == '_main_':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+[10.29, 6/5/2026] Lutt: <!DOCTYPE html>
+<html>
+<head>
+    <title>Catatan Pintar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/produk">Produk</a>
+    <a href="/kontak">Kontak</a>
+</nav>
+
+<h1>📚 Catatan Pintar</h1>
+<p>Platform usaha digital untuk membantu pelajar belajar lebih mudah dengan produk digital.</p>
+
+</body>
+</html>
+[10.29, 6/5/2026] Lutt: <!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/produk">Produk</a>
+    <a href="/kontak">Kontak</a>
+</nav>
+
+<h2>Tentang Usaha</h2>
+
+<p><b>Nama Usaha:</b> Catatan Pintar</p>
+<p><b>Latar Belakang:</b> Membantu pelajar memahami materi dengan cara praktis.</p>
+
+<p><b>Visi:</b> Menjadi platform edukasi digital terbaik.</p>
+
+<p><b>Misi:</b></p>
+<ul style="text-align:center; list-style:none;">
+    <li>Menyediakan materi berkualitas</li>
+    <li>Harga terjangkau</li>
+    <li>Mudah diakses</li>
+</ul>
+
+</body>
+</html>
+[10.31, 6/5/2026] Lutt: <!DOCTYPE html>
+<html>
+<head>
+    <title>Produk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/produk">Produk</a>
+    <a href="/kontak">Kontak</a>
+</nav>
+
+<h2>Produk Digital</h2>
+
+<div class="produk">
+    <h3>E-book Ringkasan</h3>
+    <p>Ringkasan materi SMA lengkap</p>
+    <p>Rp 15.000</p>
+</div>
+
+<div class="produk">
+    <h3>Template Catatan</h3>
+    <p>Template catatan estetik</p>
+    <p>Rp 10.000</p>
+</div>
+
+<div class="produk">
+    <h3>Bank Soal</h3>
+    <p>Kumpulan soal + pembahasan</p>
+    <p>Rp 20.000</p>
+</div>
+
+</body>
+</html>
